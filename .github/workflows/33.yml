@@ -1,0 +1,20 @@
+name: Sequential Workflow
+on: workflow_dispatch
+jobs:
+  job_a:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step A
+        run: echo "Job A is running"
+  job_b:
+    needs: job_a
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step B
+        run: echo "Job B is running after Job A"
+  job_c:
+   needs: job_b
+   runs-on: ubuntu-latest
+   steps:
+      - name: Step C
+        run: echo "Job C is running after Job B" 
