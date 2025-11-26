@@ -1,0 +1,9 @@
+name: Basic Workflow
+on: [push]
+
+jobs:
+  print_message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello
+        run: echo "Hello from GitHub Actions!"
